@@ -1,0 +1,83 @@
+let num;    
+let guess;    
+let tries = 0;  
+
+function guessNumber() {    
+  num = Math.floor(Math.random() * 100) + 1;    
+  guess = parseFloat(prompt("请输入一个 1 到 100 之间的数字:"));    
+  guess = guess.toFixed(2);    
+  if (guess > num) {    
+    alert("太大了!");    
+  } else if (guess < num) {    
+    alert("太小了!");    
+  } else {    
+    alert("恭喜你，猜对了!");    
+    resetGame();    
+  }    
+}  
+
+function resetGame() {    
+  tries = 0;    
+  num = 1;    
+  guess = parseFloat(prompt("请输入一个 1 到 100 之间的数字:"));    
+}  
+
+guessNumber();  
+
+while (tries < 10) {    
+  try {    
+    guessNumber();    
+    guess = parseFloat(prompt("请输入一个 1 到 100 之间的数字:"));    
+    tries++;    
+  } catch (e) {    
+    alert("输入有误，请重新输入。");    
+  }    
+}  
+
+alert("游戏结束，您的得分是:" + tries + "次。");    
+
+
+
+import random  
+
+# 定义游戏主循环    
+while True:    
+    # 打印游戏标题    
+    print("欢迎来到文字冒险游戏!")    
+    print("你将面临一系列选择，每个选择都会影响你的游戏结局。")    
+    print("让我们开始吧!")  
+
+    # 获取用户输入    
+    choice = input("请选择游戏模式 (1-故事模式，2-探险模式，3-退出):")  
+
+    # 根据用户输入判断游戏模式    
+    if choice == "1":    
+        game_mode = "故事模式"    
+    elif choice == "2":    
+        game_mode = "探险模式"    
+    elif choice == "3":    
+        game_mode = "退出"    
+    else:    
+        print("输入有误，请重新输入。")    
+        continue  
+
+    # 判断游戏模式    
+    if game_mode == "故事模式":    
+        # 打印故事线    
+        print("你来到了一座神秘的森林，听说里面有一个神秘的宝藏。")    
+        print("你遇到了一只凶猛的狼，你打败了狼，获得了一把宝剑。")    
+        print("你继续深入森林，遇到了一只巨型蜘蛛，你打败了巨型蜘蛛。")    
+        print("你终于找到了宝藏，但是宝藏却被一只恶魔守护着。")    
+        print("你与恶魔进行了一场决斗，最终你战胜了恶魔，获得了宝藏。")    
+        print("你离开了森林，回到了自己的家。")    
+    elif game_mode == "探险模式":    
+        # 打印探险路线    
+        print("你来到了一座神秘的山洞，里面充满了危险。")    
+        print("你遇到了一只凶猛的蝙蝠，你打败了蝙蝠，获得了一块宝石。")    
+        print("你继续深入山洞，遇到了一只巨型蜘蛛，你打败了巨型蜘蛛。")    
+        print("你终于找到了宝藏，但是宝藏却被一只恶魔守护着。")    
+        print("你与恶魔进行了一场决斗，最终你战胜了恶魔，获得了宝藏。")    
+        print("你离开了山洞，回到了自己的家。")    
+    else:    
+        print("游戏结束，你获得了 {} 的结局。".format(game_mode))    
+        break    
